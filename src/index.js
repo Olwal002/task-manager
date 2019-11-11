@@ -6,9 +6,9 @@ const taskRouter = require('./routers/task');
 const app = express(); // creating a variable app and invoking the function express
 const port = process.env.PORT || 3000; // creating server host to run on
 
-app.use((req,res,next) =>{
-    res.status(503).send('Site is currently down')
-})
+// app.use((req,res,next) =>{
+//     res.status(503).send('Site is currently down')
+// })
 app.use(express.json());  //formatting
 app.use(userRouter);
 app.use(taskRouter);
@@ -33,12 +33,12 @@ app.listen(port, () => {
 // }
 // myFunction();
 
-const jwt = require('jsonwebtoken');
-const myFunction = async () => {
-    const token = jwt.sign({ _id:'abc123'},'awesome',{expiresIn:'4 days'});
-    console.log(token)
+// const jwt = require('jsonwebtoken');
+// const myFunction = async () => {
+//     const token = jwt.sign({ _id:'abc123'},'awesome',{expiresIn:'4 days'});
+//     console.log(token)
 
-    const data = jwt.verify(token,'awesome');
-    console.log(data)
-}
-myFunction();
+//     const data = jwt.verify(token,'awesome');
+//     console.log(data)
+// }
+// myFunction();
